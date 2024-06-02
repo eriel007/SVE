@@ -3,13 +3,19 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import routes from "../src/routes/routes";
-import CssBaseline from "@mui/material/CssBaseline";
-import Fuente from "./views/components/Fuente";
+//import CssBaseline from "@mui/material/CssBaseline";
+//import Fuente from "./views/components/Fuente";
+import { CandidatosContextProvider } from "./context/CandidatosProvider";
+import { EleccionesContextProvider } from "./context/EleccionesProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <CandidatosContextProvider>
+      <EleccionesContextProvider>
+        <RouterProvider router={routes} />
+      </EleccionesContextProvider>
+    </CandidatosContextProvider>
   </React.StrictMode>
 );
 

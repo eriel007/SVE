@@ -5,13 +5,13 @@ function Boton({ texto, ancho, largo, borde, tamañoTexto }) {
     <>
       <Button
         variant='contained'
-        size='large'
         sx={{
           margin: 1,
           width: ancho || "150px",
           height: largo || "60px",
           borderRadius: borde || "4px",
           fontSize: tamañoTexto || "16px",
+          textTransform: "none",
         }}>
         {texto}
       </Button>

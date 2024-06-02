@@ -8,43 +8,43 @@ import {
   Box,
 } from "@mui/material";
 
-function Cardd({ imageSrc, description }) {
+function Cardd({ imageSrc, description, nombre }) {
   return (
     <>
       <Card
         sx={{
           maxWidth: 230,
+          minWidth: 230,
           m: 2,
           borderRadius: "8px" || "8px",
           border: "2px solid #1976d2",
           boxShadow: 3,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           backgroundColor: "#D9D9D9",
         }}>
-        <Box
+        <CardMedia
+          component='img'
+          image={imageSrc || kali}
+          alt='Card Image'
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: 110,
-            marginTop: 2, // Ajusta esto según el tamaño deseado
-          }}>
-          <CardMedia
-            component='img'
-            image={kali}
-            alt='Card Image'
-            sx={{
-              width: "150px",
-              height: "100%",
-              borderRadius: "8px", // Esto mantiene la proporción de la imagen
-            }}
-          />
-        </Box>
+            width: "130px",
+            height: "100px",
+            objectFit: "cover",
+            marginTop: "10px",
+            borderRadius: "20%",
+          }}
+        />
         <CardContent
           sx={{
             textAlign: "center",
           }}>
           <Typography variant='body1' color='text.secondary'>
             {description}
+          </Typography>
+          <Typography variant='body1' color='text.secondary'>
+            {nombre}
           </Typography>
         </CardContent>
         <Box display='flex' justifyContent='center' alignItems='center' p={2}>
