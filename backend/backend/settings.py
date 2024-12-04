@@ -12,12 +12,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 
-#base directory of your project
+# base directory of your project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Media settings
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 from pathlib import Path
 
@@ -46,10 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'api',
-    'rest_framework',
-    'coreapi',
-    'corsheaders',
+    "api",
+    "rest_framework",
+    "coreapi",
+    "corsheaders",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -60,8 +61,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -91,11 +92,11 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": 'SistemaVotacionElectronica',
-        'USER': 'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306',
+        "NAME": "SistemaVotacionElectronica",
+        "USER": "root",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "3306",
     }
 }
 
@@ -141,13 +142,18 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS' : 'rest_framework.schemas.coreapi.AutoSchema'
-}
+REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema"}
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://192.168.1.2:5173",
     # Agrega otros dominios según sea necesario
 ]
-
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "192.168.1.2",  # La IP de tu computadora en la red local
+]

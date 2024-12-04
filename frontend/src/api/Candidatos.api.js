@@ -15,3 +15,6 @@ export const updateCandidatoRequest = async (id, newData) =>
 
 export const deleteCandidatoRequest = async (id) =>
   await axios.delete(URL_API + "/Candidatos/" + id);
+
+export const getCandidatosEleccionRequest = async (id) =>
+  await axios.get(URL_API + "/Elecciones/" + id + "/candidatos");

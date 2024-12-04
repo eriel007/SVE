@@ -5,6 +5,7 @@ import {
   createEleccionRequest,
   updateEleccionRequest,
   deleteEleccionRequest,
+  getIndicesRequest,
 } from "../api/Elecciones.api";
 import { EleccionesContext } from "./EleccionesContext";
 
@@ -19,6 +20,7 @@ export const useElecciones = () => {
 export const EleccionesContextProvider = ({ children }) => {
   const [elecciones, setElecciones] = useState([]);
   const [eleccion, setEleccion] = useState(null);
+  const [indices, setIndices] = useState();
 
   async function loadElecciones() {
     const response = await getEleccionesRequest();
@@ -33,6 +35,11 @@ export const EleccionesContextProvider = ({ children }) => {
   async function createEleccion(eleccion) {
     const response = await createEleccionRequest(eleccion);
     setEleccion([...elecciones, response.data]);
+  }
+
+  async function getIndices() {
+    const response = await getIndicesRequest();
+    setIndices(response.data);
   }
 
   async function updateEleccion(id, newData) {
@@ -54,11 +61,13 @@ export const EleccionesContextProvider = ({ children }) => {
       value={{
         elecciones,
         eleccion,
+        indices,
         loadElecciones,
         getEleccion,
         createEleccion,
         updateEleccion,
         deleteEleccion,
+        getIndices,
       }}>
       {children}
     </EleccionesContext.Provider>

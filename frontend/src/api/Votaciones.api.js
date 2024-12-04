@@ -8,7 +8,7 @@ export const getVotacionRequest = async (id) =>
   await axios.get(URL_API + "/Voto/" + id);
 
 export const createVotacionRequest = async (voto) =>
-  await axios.post(URL_API + "/Voto/" + voto);
+  await axios.post(URL_API + "/Voto/", voto);
 
 export const updateVotacionRequest = async (id, newData) =>
   await axios.put(URL_API + "/Voto/" + id, newData);

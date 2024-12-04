@@ -5,6 +5,7 @@ import {
   createCandidatoRequest,
   updateCandidatoRequest,
   deleteCandidatoRequest,
+  getCandidatosEleccionRequest,
 } from "../api/Candidatos.api";
 import { CandidatosContext } from "./CandidatosContext";
 
@@ -49,6 +50,11 @@ export const CandidatosContextProvider = ({ children }) => {
     setCandidatos(candidatos.filter((candidato) => candidato.id !== id));
   }
 
+  async function getCandidatosEleccion(id) {
+    const response = await getCandidatosEleccionRequest(id);
+    setCandidatos(response.data);
+  }
+
   return (
     <CandidatosContext.Provider
       value={{
@@ -59,6 +65,7 @@ export const CandidatosContextProvider = ({ children }) => {
         createCandidato,
         updateCandidato,
         deleteCandidato,
+        getCandidatosEleccion,
       }}>
       {children}
     </CandidatosContext.Provider>

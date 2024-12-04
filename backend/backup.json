@@ -1,0 +1,78 @@
+[
+    {
+        "model": "api.eleccion",
+        "pk": 1,
+        "fields": {
+            "nombre": "Elecciones para director de carrera del departemento de sistemas e informatica",
+            "fecha": "2024-09-16"
+        }
+    },
+    {
+        "model": "api.eleccion",
+        "pk": 2,
+        "fields": {
+            "nombre": "Elecciones para representante de candidatos del consejo estudiantil",
+            "fecha": "2024-09-16"
+        }
+    },
+    {
+        "model": "api.candidatos",
+        "pk": 1,
+        "fields": {
+            "nombre": "juan morales",
+            "descripcion": "tech hub",
+            "fecha": "2024-09-16",
+            "eleccion": 1
+        }
+    },
+    {
+        "model": "api.candidatos",
+        "pk": 2,
+        "fields": {
+            "nombre": "pedro nogales",
+            "descripcion": "team self",
+            "fecha": "2024-09-16",
+            "eleccion": 1
+        }
+    },
+    {
+        "model": "api.candidatos",
+        "pk": 3,
+        "fields": {
+            "nombre": "carlos flores",
+            "descripcion": "kali linux",
+            "fecha": "2024-09-16",
+            "eleccion": 1
+        }
+    },
+    {
+        "model": "api.candidatos",
+        "pk": 4,
+        "fields": {
+            "nombre": "samuel alvarez",
+            "descripcion": "kali linux",
+            "fecha": "2024-09-16",
+            "eleccion": 2
+        }
+    },
+    {
+        "model": "api.candidatos",
+        "pk": 5,
+        "fields": {
+            "nombre": "zulma choque",
+            "descripcion": "promp code",
+            "fecha": "2024-09-16",
+            "eleccion": 2
+        }
+    },
+    {
+        "model": "api.candidatos",
+        "pk": 6,
+        "fields": {
+            "nombre": "lizet hauyana",
+            "descripcion": "felcc int",
+            "fecha": "2024-09-16",
+            "eleccion": 2
+        }
+    }
+]

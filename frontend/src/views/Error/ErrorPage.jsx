@@ -3,7 +3,7 @@ import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
-function ErrorPage() {
+function ErrorPage({ direccion }) {
   const navigate = useNavigate();
 
   return (
@@ -24,14 +24,14 @@ function ErrorPage() {
         404
       </Typography>
       <Typography variant='h6' component='h6' sx={{ mb: 2 }}>
-        Lo sentimos, la página que estás buscando no existe.
+        Lo sentimos, se encontro un error al cargar los datos.
       </Typography>
       <Button
         variant='contained'
         color='primary'
-        onClick={() => navigate("/")}
+        onClick={() => navigate(direccion)}
         sx={{ mt: 2 }}>
-        Volver al inicio
+        Volver al Atras
       </Button>
     </Box>
   );
